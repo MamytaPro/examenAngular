@@ -1,0 +1,25 @@
+.snap-ipd-card{
+  background-color: gainsboro;
+  box-sizing: border-box;
+  width: 50%;
+  margin: 40px auto;
+  padding: 70px 45px;
+  box-shadow: lightgray 4px 4px 20px;
+  margin-top: 4000;
+  height: 100;
+}
+img{
+  border-image: 0;
+  border: 0;
+}
+.liked{
+  background-color: rgba($color: red, $alpha: 0.4);
+  color: black;
+  button{
+    box-shadow: red 3px 3px 7px;
+    color: black;
+    &:active{
+      box-shadow: red 0 0 5px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div class="snap-ipd-card"><br>
+  <p>
+    <a href="#"><img src="assets/images/profil.png" height="40px"></a>
+      <b>  {{pub.pseudo}} </b>
+  </p>
+  <p><img class="a" [src]="pub.imageUrl" width="650"></p>
+<button (click)="onAddLike()" [ngClass]="{liked: buttonTest==='Dislike'}">{{buttonTest}}</button>
+  {{pub.nbLike}}
+  <p>
+    <span><strong>{{pub.pseudo}}</strong></span> à {{pub.localisation}}<br>
+    Publié le {{pub.date}}
+
+    <p>
+      {{pub.description}}
+      <br>
+      <strong>{{pub.nbLike}}</strong> j'aimes
+
+      <p>
+        <strong>Liste des commentaires:</strong>
+  </p>
+   <app-commentaire [commentaire]="com"  *ngFor="let com of pub.comment"></app-commentaire>
+  <hr>
+
+</div>
+<!--  -->
+
+

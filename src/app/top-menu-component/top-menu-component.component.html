@@ -1,0 +1,64 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="side-text">IPD</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item  routerLink=""><fa-icon [icon]="faHome" size="lg"></fa-icon> &nbsp;Accueil</a>
+      <a mat-list-item routerLink="add-post"><fa-icon [icon]="faSquare" size="lg"></fa-icon>&nbsp;Publier</a>
+      <a mat-list-item routerLink="notify"><fa-icon [icon]="faHeart" size="lg"></fa-icon>&nbsp;Notifications</a>
+      <a mat-list-item routerLink="chat"><fa-icon [icon]="chat" size="lg"></fa-icon>&nbsp;Chat</a>
+      <hr class="bg-white mt-5">
+      <a mat-list-item routerLink="profil"><fa-icon [icon]="faUser" size="lg"></fa-icon>&nbsp;Profil</a>
+      <a mat-list-item routerLink="modify"><fa-icon [icon]="faModif" size="lg"></fa-icon>&nbsp;Modifications</a>
+      <a mat-list-item routerLink="settings"><fa-icon [icon]="faSettings" size="lg"></fa-icon>&nbsp;Paramètres</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>
+        <a routerLink=""><img class="logo" src="assets/images/ipd.png" width="40" height="40" ></a>
+      </span>
+     <span class="spacer"></span>
+     <div class="nav-view">
+
+      <a  routerLink=""><fa-icon [icon]="faHome" ></fa-icon> </a>
+      <a  routerLink="add-post"><fa-icon [icon]="faSquare"></fa-icon></a>
+      <a  routerLink="notify"><fa-icon [icon]="faHeart" ></fa-icon></a>
+      <a  routerLink="chat"><fa-icon [icon]="chat" ></fa-icon></a>
+
+
+      <button (click)="isOpen = !isOpen" class="blueIPD "  type="button" cdkOverlayOrigin #trigger="" style="border-style: none;   width: 40px; height: 20px; padding-bottom: 30px;">
+        <img src="assets/images/profil.png" width="22" height="22" alt="" srcset="" style="border-radius: 20px;">&nbsp;<fa-icon [icon]="caret" size="sm"></fa-icon>
+      </button>
+
+      <ng-template
+        cdkConnectedOverlay
+        [cdkConnectedOverlayOrigin]="trigger"
+        [cdkConnectedOverlayOpen]="isOpen"
+      >
+        <ul class="example-list text-black" style="width:150px; background-color: #0c549e;">
+          <li><a  class="text-decoration-none" routerLink="profil">Profil</a></li>
+          <li><a class="text-decoration-none" routerLink="settings">Paramètres</a></li>
+          <li><a class="text-decoration-none" routerLink="modify">Modifications</a></li>
+        </ul>
+      </ng-template>
+
+
+     </div>
+    </mat-toolbar>
+    <ng-content>
+    </ng-content>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

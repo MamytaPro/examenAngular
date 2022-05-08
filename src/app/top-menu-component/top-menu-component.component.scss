@@ -1,0 +1,106 @@
+@use '@angular/material' as mat;
+@include mat.core();
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 400px;
+
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#drawer{
+  color: white;
+}
+
+.logo{
+  border-radius: 40px;
+}
+
+@media(min-width:1000px){
+  .sidenav{
+    display: none;
+  }
+}
+
+.spacer{
+  flex : 1 1 auto;
+}
+
+.mat-toolbar a {
+  display:inline-block;
+  margin: 0 8px;
+  color:white;
+  text-decoration: none;
+}
+
+
+@media(max-width:1000px){
+  .nav-view{
+    display: none;
+  }
+}
+
+mat-toolbar {
+  background-color: #0c549e;
+}
+
+mat-toolbar button{
+  color: white;
+}
+
+mat-sidenav{
+  background-color:#0c549e ;
+}
+
+mat-nav-list a{
+  color: white;
+}
+.side-text{
+  color: rgb(250, 171, 12);
+}
+
+mat-toolbar{
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+
+ }
+
+
+ .example-list {
+  width: 100px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+}
+
+.example-list > li {
+  list-style-type: none;
+  border-bottom: solid 1px #8b8b8b;
+  padding: 8px 0;
+}
+
+.example-list > li:last-child {
+  border-bottom: none;
+}
+
+ul li a{
+  color: white;
+}
+
+
